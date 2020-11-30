@@ -27,7 +27,14 @@
         </ul>
       </div>
       -->
-      <h2>Let someone know dinner is ready</h2>
+      <h2>
+        Are you tired of straining your voice yelling "Dinner's Ready" to your
+        family?
+        <br />
+        <br />
+        Everyone has their phone on hand, why not send them a text letting them
+        know!
+      </h2>
       <form
         method="post"
         action="/add-compliment"
@@ -48,7 +55,7 @@
             Your Name
             <input
               type="text"
-              placeholder="Jane"
+              placeholder="Mario"
               name="sender"
               v-model="sender"
             />
@@ -56,22 +63,22 @@
         </div>
         <div class="form-row">
           <label for="receiver">
-            Person to compliment
+            Recipient
             <input
               type="text"
-              placeholder="Sally"
+              placeholder="Sidney"
               name="receiver"
               v-model="receiver"
             />
           </label>
-          <span class="float-text">is</span>
-          <label for="compliment">
-            Your compliment
+          <!-- <span class="float-text">is</span> -->
+          <label for="message">
+            Your message
             <input
               type="text"
-              placeholder="an amazing person!"
-              name="compliment"
-              v-model="compliment"
+              placeholder="Your dinner is getting cold!"
+              name="message"
+              v-model="message"
             />
           </label>
         </div>
@@ -81,23 +88,23 @@
         class="compliment-button"
         @click.prevent="sendCompliment"
       >
-        Send compliment
+        Send message
       </button>
     </div>
     <script>
       const app = new Vue({
         el: "#app",
         data: {
-          compliments: [],
+          messages: [],
           to: null,
           sender: null,
           receiver: null,
-          compliment: null
+          message: null,
         },
         methods: {
-          async refreshCompliments() {
-            const response = await fetch("/api/compliments");
-            this.compliments = await response.json();
+          async refreshMessages() {
+            const response = await fetch("/api/messages");
+            this.messages = await response.json();
           },
           async sendCompliment() {
             // Gather data from the form
@@ -105,16 +112,16 @@
               to: this.to,
               sender: this.sender,
               receiver: this.receiver,
-              compliment: this.compliment
+              message: this.message,
             };
 
-            const response = await fetch("/api/compliments", {
+            const response = await fetch("/api/messages", {
               method: "POST",
               headers: {
                 Accept: "application/json",
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
               },
-              body: JSON.stringify(data)
+              body: JSON.stringify(data),
             });
             const result = await response.json();
             console.log(result);
@@ -122,14 +129,14 @@
             this.to = null;
             this.sender = null;
             this.receiver = null;
-            this.compliment = null;
-            this.refreshCompliments();
+            this.message = null;
+            this.refreshMessages();
             return result;
-          }
+          },
         },
         created() {
-          this.refreshCompliments();
-        }
+          this.refreshMessages();
+        },
       });
     </script>
   </body>
