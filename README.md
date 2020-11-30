@@ -1,4 +1,6 @@
-# Example Application - Complimentr
+# Project Application - Dinner's Ready
+
+This is a full-stack Javascript application, I used various javascript frameworks . The server side code utilizes node.js and express
 
 This application is meant to be used with the [ 🎥 Introduction to APIs course](https://github.com/craigsdennis/intro-to-apis-course).
 

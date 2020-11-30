@@ -12,10 +12,12 @@ const twilioPhoneNumber = process.env.TWILIO_PHONE_NUMBER;
 app.use(express.static("public"));
 // Parse the body of requests automatically
 app.use(bodyParser.json());
-//twilio post, takes values
+//twilio sending text message
 app.post("/api/messages", async (req, res) => {
   const to = req.body.to;
+  //utilizes variable for sensative account info
   const from = process.env.TWILIO_PHONE_NUMBER;
+  //structure of the text message sent to users
   const body = `${req.body.sender} says, ${req.body.receiver} ${req.body.message}. Thank you for using ${req.headers.referer}`;
   // Send a message, returns error in console if any
   try {
