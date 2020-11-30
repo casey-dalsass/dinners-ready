@@ -12,11 +12,21 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./assets/css/main.css" />
-    <link rel="icon" href="https://cdn.glitch.com/c9e875c6-473b-430c-b0ad-f050c54dc294%2Ffavicon.ico?v=1606764131077">
   </head>
   <body>
     <div id="app" class="container">
       <h1>Dinner's Ready!</h1>
+      
+      
+    <!-- Commenting out the RECENT COMPLIMENTS SECTION
+      <div class="content">
+        <ul v-if="compliments.length > 0">
+          <li v-for="compliment in compliments">
+            {{ compliment }}
+          </li>
+        </ul>
+      </div>
+      -->
       <h2>
         Are you tired of straining your voice yelling "Dinner's Ready" to your
         family?
@@ -61,6 +71,7 @@
               v-model="receiver"
             />
           </label>
+          <!-- <span class="float-text">is</span> -->
           <label for="message">
             Your message
             <input
@@ -88,7 +99,7 @@
           to: null,
           sender: null,
           receiver: null,
-          message: null
+          message: null,
         },
         methods: {
           async refreshMessages() {
@@ -101,16 +112,16 @@
               to: this.to,
               sender: this.sender,
               receiver: this.receiver,
-              message: this.message
+              message: this.message,
             };
 
             const response = await fetch("/api/messages", {
               method: "POST",
               headers: {
                 Accept: "application/json",
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
               },
-              body: JSON.stringify(data)
+              body: JSON.stringify(data),
             });
             const result = await response.json();
             console.log(result);
@@ -121,11 +132,11 @@
             this.message = null;
             this.refreshMessages();
             return result;
-          }
+          },
         },
         created() {
           this.refreshMessages();
-        }
+        },
       });
     </script>
   </body>
