@@ -3,6 +3,10 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 const port = 3000;
+const TwilioClient = require("twilio");
+
+const client = new TwilioClient();
+const twilioPhoneNumber = process.env.TWILIO_PHONE_NUMBER;
 
 // This is a single page application and it's all rendered in public/index.html
 app.use(express.static("public"));
