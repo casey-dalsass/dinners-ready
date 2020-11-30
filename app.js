@@ -17,7 +17,7 @@ app.post("/api/messages", async (req, res) => {
   const to = req.body.to;
   const from = process.env.TWILIO_PHONE_NUMBER;
   const body = `${req.body.sender} says, ${req.body.receiver} ${req.body.message}. Thank you for using ${req.headers.referer}`;
-  // Send a message
+  // Send a message, returns error in console if any
   try {
     await client.messages.create({ to, from, body });
   } catch (err) {
