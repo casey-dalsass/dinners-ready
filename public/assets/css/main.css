@@ -236,7 +236,7 @@ h2 {
   line-height: 2em;
 }
 
-.compliment-button {
+.dinner-message-button {
   height: 4em;
   width: 100%;
   margin: 0.5em 0 -0.1em 0;
@@ -246,11 +246,11 @@ h2 {
   color: #fff;
 }
 
-.compliment-button:hover {
+.dinner-message-button:hover {
   background-color: #c0392b;
 }
 
-.compliment-button:active {
+.dinner-message-button:active {
   padding: 8px 13px 6px;
 }
 
@@ -276,7 +276,7 @@ h2 {
     font-size: 0.75em;
   }
 
-  .compliment-button {
+  .dinner-message-button {
     height: 2.5em;
     border-radius: 0 0 0.5em 0.5em;
   }
