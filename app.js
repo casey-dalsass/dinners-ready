@@ -13,14 +13,6 @@ app.use(express.static("public"));
 // Parse the body of requests automatically
 app.use(bodyParser.json());
 
-app.get("/api/messages", async (req, res) => {
-  // Get a list of messages sent from a specific number
-  const sentMessages = await client.messages.list({ from: twilioPhoneNumber });
-  // Gather only the body of those messages for sending to the client
-  const dinnerMessage = sentMessages.map((message) => message.body);
-  res.json(dinnerMessage);
-});
-
 app.post("/api/messages", async (req, res) => {
   const to = req.body.to;
   const from = process.env.TWILIO_PHONE_NUMBER;
