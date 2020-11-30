@@ -12,7 +12,7 @@ const twilioPhoneNumber = process.env.TWILIO_PHONE_NUMBER;
 app.use(express.static("public"));
 // Parse the body of requests automatically
 app.use(bodyParser.json());
-
+//twilio post, takes values
 app.post("/api/messages", async (req, res) => {
   const to = req.body.to;
   const from = process.env.TWILIO_PHONE_NUMBER;
