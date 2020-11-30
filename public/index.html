@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Complimentr</title>
+    <title>Dinner's Ready!</title>
     <!-- Include Dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link
@@ -15,8 +15,8 @@
   </head>
   <body>
     <div id="app" class="container">
-      <h1>Complimentr</h1>
-      <h2>Recent Compliments</h2>
+      <h1>Dinner's Ready!</h1>
+      <h2>Who's hungry?!</h2>
       <div class="content">
         <ul v-if="compliments.length > 0">
           <li v-for="compliment in compliments">
@@ -24,7 +24,7 @@
           </li>
         </ul>
       </div>
-      <h2>Send a compliment</h2>
+      <h2>Let someone know dinner is ready</h2>
       <form
         method="post"
         action="/add-compliment"
