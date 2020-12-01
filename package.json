@@ -1,5 +1,5 @@
 {
-  "name": "complimentr",
+  "name": "DinnersReady",
   "version": "1.0.0",
   "description": "Example application for Introduction to APIs",
   "main": "app.js",
@@ -14,7 +14,7 @@
     "node",
     "beginner"
   ],
-  "author": "@craigsdennis",
+  "author": "Casey Dalsass",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
