@@ -1,7 +1,7 @@
 # Project Application - Dinner's Ready
 
 This project brings me back to my childhood, especially around the holidays.
-It was too common when my mom, or one of my aunts, call out to my siblings, cousins, and I dinner was ready! Circling back
+It was too common when my mom, or one of my aunts, calls out to my siblings, cousins, and I dinner was ready! Circling back
 to a modern 2020 each person in our family has a cell phone, and regularlly uses it. So, that lead me to creating a modern solution
 for a "dated" problem. Utilizing Dinner's ready you simply use the web for and enter the recipients phone number, your name, 
 recipient's name, and your message to them. Click send, and they'll get a text message!
